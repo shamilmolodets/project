@@ -1,41 +1,39 @@
 "use strict";
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function() {
-        console.log("Test");
-    }
+const numberOfFilms = +prompt ('Сколько фильмов вы уже посмотрели?', '');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
 };
 
-options.makeTest();
+const   a = prompt('Один из последних просмотренных фильмов?'),
+        b = prompt('На сколько оцените его?'),
+        c = prompt('Один из последних просмотренных фильмов?'),
+        d = prompt('На сколько оцените его?');
 
-const {border,bg} = options.colors;
-console.log(border);
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
 
-/* console.log(Object.keys(options).length); */
+console.log(personalMovieDB);
 
-/* console.log(options["colors"]["border"]); */
-
-/* delete options.name;
-
-console.log(options); */
-
-/* let counter = 0;
-for (let key in options) {
-    if (typeof(options[key]) === 'object') {
-        for (let i in options[key]) {
-            console.log(`Свойства ${i} имеет значение ${options[key][i]}`);
-            counter++;
-        }
-    } else {
-        console.log(`Свойства ${key} имеет значение ${options[key]}`);
-        counter++;
+/* 1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате: 
+    movies: {
+        'logan': '8.1'
     }
-}
-console.log(counter); */
+Проверить, чтобы все работало без ошибок в консоли */
